@@ -2,8 +2,12 @@
 
 .image-upload
   .image-upload__title ここに画像アップロードフォームを作成
-  %input{ class: 'image-upload__input', type: 'file'}
-    = icon 'fas', 'camera'
-    
+  = form_with url: images_path, model: @image, loacl: true do |f|
+    = f.label :image, class: 'aaaaaaa' do
+      = icon 'fas', 'camera'
+    = f.file_field :image
+    = f.submit 'Upload'
+  
+  
 .slide-show ここにスライドショーを作る
 
