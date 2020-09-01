@@ -2,11 +2,12 @@
 
 .image-upload
   .image-upload__title ここに画像アップロードフォームを作成
-  = form_with url: images_path, model: @image, loacl: true do |f|
-    = f.label :image, class: 'aaaaaaa' do
-      = icon 'fas', 'camera'
-    = f.file_field :image
-    = f.submit 'Upload'
+  = form_with url: images_path, model: @image, class: 'image-upload__form', loacl: true do |f|
+    = f.label :image, class: 'image-upload__form__label' do
+      = icon 'far', 'image', class: 'image-upload__form__label--icon'
+    = f.file_field :image, class: 'image-upload__form__file'
+    .image-upload__form__preview
+    = f.submit 'Upload', class: 'image-upload__form__submit'
   
   
 .slide-show ここにスライドショーを作る
