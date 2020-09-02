@@ -16,8 +16,7 @@ $(document).on('turbolinks:load', function() {
       var image = this.result;
       $('.image-upload__form__preview').prepend(buildHTML(image));
     }
-    // console.log(image);
+    // アイコンを削除
     $('.image-upload__form__label').hide();
-    // $('.image-upload__form__preview').prepend(image);
   })
 });
