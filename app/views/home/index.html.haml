@@ -9,7 +9,6 @@
     .image-upload__form__preview
     = f.submit 'Upload', class: 'image-upload__form__submit'
   
-  
 .slide-show ここにスライドショーを作る
 - @images.each do |image|
   = image_tag(image.image.url, size: '120x100')
