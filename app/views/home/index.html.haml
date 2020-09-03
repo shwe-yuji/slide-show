@@ -9,7 +9,15 @@
     .image-upload__form__preview
     = f.submit 'Upload', class: 'image-upload__form__submit'
   
-.slide-show ここにスライドショーを作る
-- @images.each do |image|
-  = image_tag(image.image.url, size: '150x100')
-  = link_to 'Delete', image_path(image.id), method: 'delete'
+.slide-show
+  = 'ここにスライドを置くよ'
+  .slide-show__list
+    - @images.each do |image|
+      .slide-show__list__box
+        = image_tag(image.image.url, size: '150x100', class: 'slide-show__list__box--image')
+        = link_to 'Delete', image_path(image.id), method: 'delete', class: 'slide-show__list__box--link'
+
+  %ul{ class: 'slide-show__dots'}
+    - @images.length.times do
+      %li{ class: 'slide-show__dots__dot' }
+        = "・"

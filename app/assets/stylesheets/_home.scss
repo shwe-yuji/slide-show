@@ -62,3 +62,53 @@
     }
   }
 }
+
+.slide-show {
+  width: 60%;
+  height: 240px;
+  text-align: center;
+  margin: 0 auto;
+  background-color: skyblue;
+  border-radius: 8px;
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+
+    &__box {
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+
+      &--image {
+        padding: 8px;
+      }
+
+      &--link {
+      margin: 0 auto;
+      width: 64px;
+      background-color: red;
+      border: solid 2px white;
+      border-radius: 5px;
+      }
+    }
+  }
+
+  &__dots {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+
+    &__dot {
+      color: black;
+      font-size: 54px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    &__dot:hover {
+      color: white;
+    }
+  }
+}
