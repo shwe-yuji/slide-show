@@ -12,3 +12,4 @@
 .slide-show ここにスライドショーを作る
 - @images.each do |image|
   = image_tag(image.image.url, size: '150x100')
+  = link_to 'Delete', image_path(image.id), method: 'delete'
