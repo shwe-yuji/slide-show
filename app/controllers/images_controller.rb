@@ -2,7 +2,10 @@ class ImagesController < ApplicationController
   
   def create
     image = Image.new(image_params)
-    image.save
+    @images = Image.all
+    if @images.length < 5
+      image.save
+    end
     redirect_to root_path
   end
 
