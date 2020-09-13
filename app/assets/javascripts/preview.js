@@ -1,5 +1,4 @@
-$(document).on('turbolinks:load', function() { 
-
+$(document).on('turbolinks:load', function() {
   function buildHTML(image){
     var html = 
       `
@@ -11,7 +10,7 @@ $(document).on('turbolinks:load', function() {
 //   アイコンをクリックして画像を選択したら発火
   $('.image-upload__form__file').on('change', function(){
     var file = this.files[0];
-    
+
     if(file.type.indexOf("image") < 0){
       alert("画像ファイルを指定してください。");
       return false;
@@ -24,7 +23,6 @@ $(document).on('turbolinks:load', function() {
 
     } else {
     //   プレビューを表示
-      // var file = this.files[0];
       var reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = function(){
