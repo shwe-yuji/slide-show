@@ -10,7 +10,13 @@ $(document).on('turbolinks:load', function() {
 
 //   アイコンをクリックして画像を選択したら発火
   $('.image-upload__form__file').on('change', function(){
+    var file = this.files[0];
     
+    if(file.type.indexOf("image") < 0){
+      alert("画像ファイルを指定してください。");
+      return false;
+    }
+
     var image_cnt = $('.slide-show__dots__dot').length
     if (image_cnt >= 5) {
       window.alert("これ以上画像を投稿できません");
@@ -18,7 +24,7 @@ $(document).on('turbolinks:load', function() {
 
     } else {
     //   プレビューを表示
-      var file = this.files[0];
+      // var file = this.files[0];
       var reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = function(){
